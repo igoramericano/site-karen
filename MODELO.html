@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karen Birman - Psicóloga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #2A4059;
+            --secondary-color: #3FBA8E;
+            --tertiary-color: #DCE2E6;
+            --text-dark: #2C2C2C;
+            --text-light: #F0F0F0;
+            --accent-color: #A7D7C5;
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background-color: var(--tertiary-color);
+            color: var(--text-dark);
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        .header-contact a {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .header-contact a:hover {
+            background-color: #319e7a;
+        }
+        
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: 60px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -25%;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            max-width: 500px;
+        }
+        
+        .hero-content .chat-bubble {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-content .chat-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 10px;
+            border-color: var(--accent-color) transparent transparent transparent;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        
+        .hero-content p {
+            font-size: 1.1em;
+            margin: 0;
+        }
+        
+        .hero-image {
+            z-index: 2;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            width: 450px;
+            height: 450px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .hero-image img {
+            max-height: 100%;
+            max-width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .info-section {
+            padding: 50px 5%;
+            background-color: #fff;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .info-image {
+            flex: 1;
+            max-width: 50%;
+        }
+        
+        .info-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .info-text {
+            flex: 1;
+            max-width: 50%;
+        }
+        
+        .info-text .card {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-text .card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+        }
+        
+        .info-text h2 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        
+        .info-text p {
+            line-height: 1.6;
+        }
+
+        .section-details {
+            padding: 50px 5%;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .section-details h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        .section-details .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .section-details .item-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--tertiary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .section-details .item-content {
+            flex: 1;
+        }
+
+        .section-details .item-content h4 {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+        }
+
+        .section-details .item-content p {
+            margin: 0;
+            color: #666;
+        }
+        
+        .details-section {
+            padding: 50px 5%;
+            display: flex;
+            gap: 40px;
+            background-color: var(--tertiary-color);
+            margin-top: 20px;
+        }
+        
+        .profile-details {
+            flex: 1;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative; /* Para posicionar o botão */
+            padding-bottom: 70px; /* Adiciona espaço para o botão */
+        }
+
+        .profile-details:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .profile-details h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .profile-details dl {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .profile-details div {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .profile-details dt {
+            font-weight: 600;
+            color: var(--primary-color);
+            width: 120px;
+        }
+        
+        .profile-details dd {
+            margin: 0;
+        }
+
+        .whatsapp-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+        
+        .whatsapp-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Botão para expandir/colapsar */
+        .expand-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .expand-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .expand-button i {
+            transition: transform 0.3s;
+        }
+
+        .expand-button.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        .animated-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            transition: all 0.6s ease-in-out;
+            min-height: 400px;
+        }
+
+        .animated-section .profile-details {
+            max-width: 500px;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .animated-section.expanded .profile-details {
+            max-width: 50%;
+            transform: translateX(0);
+        }
+        
+        .animated-section.expanded .stats-section {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            flex: 2;
+        }
+        
+        .stat-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        .stat-card .number {
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        
+        .stat-card .label {
+            font-size: 1em;
+            font-weight: 600;
+            color: #777;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px 5%;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            
+            nav {
+                flex: 1;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .header-contact {
+                margin-top: 0;
+            }
+
+            .hero, .info-section, .details-section, .section-details {
+                flex-direction: column;
+                padding: 40px 5%;
+            }
+            
+            .animated-section, .animated-section.expanded {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .animated-section .profile-details, .animated-section.expanded .profile-details {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .hero-image {
+                width: 300px;
+                height: 300px;
+                margin-top: 40px;
+            }
+            .info-image, .info-text {
+                max-width: 100%;
+            }
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+            .profile-details dl {
+                display: block;
+            }
+            .profile-details dt {
+                display: block;
+                width: auto;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Karen Birman</div>
+    <div class="header-actions">
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#formacao">Formação</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="header-contact">
+            <a href="https://wa.me/5571999109330" target="_blank">
+                <i class="fab fa-whatsapp"></i> +55(71)99910-9330
+            </a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="chat-bubble">
+            Olá amigo!
+        </div>
+        <h1>Bem-vindo ao seu espaço de acolhimento</h1>
+        <p>Atendimento psicológico humanizado, focado no seu bem-estar e desenvolvimento pessoal. Aqui, você encontra um espaço seguro para falar sobre suas emoções e alcançar seus objetivos.</p>
+        <p>Estou disponível para novas consultas.</p>
+    </div>
+    <div class="hero-image">
+        <img src="images/karen.png" alt="Karen Birman - Psicóloga">
+    </div>
+</section>
+
+<section id="sobre" class="info-section">
+    <div class="info-image">
+        <img src="images/karen2.png" alt="Karen Birman em um ambiente de consulta">
+    </div>
+    <div class="info-text">
+        <div class="card">
+            <img src="images/karen.png" alt="Minha foto">
+            <div>
+                <h2>Minha História</h2>
+            </div>
+        </div>
+        <h3>Um pouco sobre Karen Birman</h3>
+        <p>Sou Karen Birman, psicóloga formada e apaixonada por ajudar pessoas a superarem desafios emocionais, promover o autoconhecimento e melhorar a qualidade de vida. Meu atendimento é baseado na escuta ativa, empatia e técnicas comprovadas cientificamente.</p>
+    </div>
+</section>
+
+<section id="experiencia" class="section-details">
+    <h3>Experiência</h3>
+    <div class="item">
+        <div class="item-icon">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="item-content">
+            <h4>Gerente de RH</h4>
+            <p>Birman Treinamentos</p>
+            <p>fev, de 2021 - o momento · 4 anos 7 meses</p>
+            <p>Salvador, Bahia, Brasil</p>
+            <p>Consultoria de Recursos Humanos</p>
+        </div>
+    </div>
+</section>
+
+<section id="formacao" class="section-details">
+    <h3>Formação acadêmica</h3>
+    <div class="item">
+        <div class="item-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="item-content">
+            <h4>FGV - PEC</h4>
+            <p>Gestão Estratégica de Pessoas · Human Resources</p>
+            <p>2012 - 2012</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="item-content">
+            <h4>Pontifícia Universidade Católica de São Paulo</h4>
+            <p>Pos Graduação · Abordagem Junguiana</p>
+            <p>2003 - 2005</p>
+        </div>
+    </div>
+    <div class="item">
+        <div class="item-icon">
+            <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="item-content">
+            <h4>Universidade São Marcos</h4>
+            <p>Graduação · Psicologia</p>
+            <p>1997 - 2002</p>
+        </div>
+    </div>
+</section>
+
+<section id="servicos" class="details-section animated-section">
+    <div class="profile-details" id="profile-card">
+        <h3>Sobre mim</h3>
+        <dl>
+            <div>
+                <dt>Nome:</dt>
+                <dd>Karen Birman Fernandes</dd>
+            </div>
+            <div>
+                <dt>Aniversário:</dt>
+                <dd>Ago 12, 1989</dd>
+            </div>
+            <div>
+                <dt>Telefone:</dt>
+                <dd>
+                    <a href="https://wa.me/5571999109330" target="_blank" class="whatsapp-link">
+                        <i class="fab fa-whatsapp"></i> +55(71)99910-9330
+                    </a>
+                </dd>
+            </div>
+            <div>
+                <dt>Email:</dt>
+                <dd><a href="mailto:karen@psicologia.com">karen@psicologia.com</a></dd>
+            </div>
+        </dl>
+        <button class="expand-button" id="expand-btn">
+            <span>Ver mais</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <div class="stats-section">
+        <div class="stat-card">
+            <div class="number">20+</div>
+            <div class="label">Anos de Experiência</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">245</div>
+            <div class="label">Clientes Felizes</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">640</div>
+            <div class="label">Projetos Publicados</div>
+        </div>
+        <div class="stat-card">
+            <div class="number">72+</div>
+            <div class="label">Prêmios Digitais</div>
+        </div>
+    </div>
+</section>
+
+<section id="idiomas" class="section-details">
+    <h3>Idiomas</h3>
+    <div class="item">
+        <div class="item-icon">
+            <i class="fas fa-language"></i>
+        </div>
+        <div class="item-content">
+            <h4>Inglês</h4>
+            <p>Nível não especificado na imagem</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contato">
+    <p>© 2025 Karen Birman - Todos os direitos reservados</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedSection = document.querySelector('.animated-section');
+        const profileCard = document.getElementById('profile-card');
+        const expandButton = document.getElementById('expand-btn');
+        const buttonText = expandButton.querySelector('span');
+        const buttonIcon = expandButton.querySelector('i');
+
+        // Adiciona a classe de estado inicial para centralizar o card
+        animatedSection.classList.add('initial-state');
+
+        // Ação de clique no card e no botão
+        profileCard.addEventListener('click', function() {
+            // Remove a classe inicial para ativar a animação
+            if (animatedSection.classList.contains('initial-state')) {
+                animatedSection.classList.remove('initial-state');
+                animatedSection.classList.add('expanded');
+                buttonText.textContent = "Ver menos";
+                buttonIcon.classList.add('fa-chevron-up');
+                buttonIcon.classList.remove('fa-chevron-down');
+            } else {
+                animatedSection.classList.add('initial-state');
+                animatedSection.classList.remove('expanded');
+                buttonText.textContent = "Ver mais";
+                buttonIcon.classList.add('fa-chevron-down');
+                buttonIcon.classList.remove('fa-chevron-up');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
